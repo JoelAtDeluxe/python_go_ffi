@@ -42,7 +42,7 @@ def load_lib(path: str) -> ctypes.CDLL:
 
 def main():
     instructions = load_file('input/input_part2.txt')
-    lib = load_lib("./dist/linux.so")
+    lib = load_lib("./dist/lib.so")
 
     start = time()
     compiled_instructions, mem_map, memory = compile_program(instructions)

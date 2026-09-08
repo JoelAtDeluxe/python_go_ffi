@@ -124,7 +124,7 @@ def test_tri_distance(lib: ctypes.CDLL):
 
 
 def main():
-    lib = setup_lib("./dist/linux.so")
+    lib = setup_lib("./dist/lib.so")
 
     test_double(lib)
     test_strlen(lib)

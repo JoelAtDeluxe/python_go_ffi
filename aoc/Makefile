@@ -1,5 +1,5 @@
 build:
-	go build -o dist/linux.so -buildmode=c-shared main.go
+	go build -o dist/lib.so -buildmode=c-shared main.go
 
 rerun: 
 	python main.py

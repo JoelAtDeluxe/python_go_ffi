@@ -13,8 +13,6 @@ typedef struct {
 import "C"
 
 import (
-	// "fmt"
-	"fmt"
 	"math"
 	"strings"
 	"unsafe"
@@ -29,7 +27,7 @@ func main() {
 
 // Double makes an integer twice as large
 //
-// export Double
+//export Double
 func Double(i int32) int32 {
 	return i * 2
 }
@@ -52,7 +50,6 @@ func TrimString(cstr *C.char) *C.char {
 //export Sum
 func Sum(cints *int32, itemCount int) int32 {
 	ints := unsafe.Slice(cints, itemCount)
-	fmt.Println("sum: ", len(ints))
 	var rtn int32 = 0
 	for _, v := range ints {
 		rtn += int32(v)
@@ -86,7 +83,7 @@ func TriDistance(tris *C.Tri, itemCount int) float64 {
 	x := (t1.x - t2.x)
 	y := (t1.y - t2.y)
 	z := (t1.z - t2.z)
-	distance := math.Sqrt( float64(x*x) + float64(y*y) + float64(z*z) )
+	distance := math.Sqrt(float64(x*x) + float64(y*y) + float64(z*z))
 
 	return distance
 }
@@ -98,7 +95,7 @@ func TriDistance(tris *C.Tri, itemCount int) float64 {
 // func DoubleAllCopy(cints *int32, itemCount int)  {
 // 	ints := unsafe.Slice(cints, itemCount)
 // 	rtn := make([]int32, itemCount)
-	
+
 // 	for i := range ints {
 // 		rtn[i] = ints[i] * 2
 // 	}
